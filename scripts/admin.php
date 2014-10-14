@@ -1,6 +1,6 @@
 <?php
 // Admin pages
-// Generated with wpsettingsapi.jeroensormani.com
+// Generated with wpsettingsapi.jeroensormani.com and slightly modified
 add_action( 'admin_menu', 'katex_add_admin_menu' );
 add_action( 'admin_init', 'katex_settings_init' );
 
