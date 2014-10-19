@@ -7,7 +7,7 @@ add_action( 'admin_init', 'katex_settings_init' );
 
 function katex_add_admin_menu(  ) { 
 
-	add_options_page( 'KaTeX', 'KaTeX', 'manage_options', 'katex', 'katex_options_page' );
+	add_options_page( 'WP-KaTeX', 'WP-KaTeX', 'manage_options', 'katex', 'katex_options_page' );
 
 }
 
@@ -68,7 +68,7 @@ function katex_options_page(  ) {
 
 	?>
 	<div class="wrap">
-		<h2>KaTeX</h2>
+		<h2>WP-KaTeX</h2>
 		<form action='options.php' method='post'>
 
 			<?php
