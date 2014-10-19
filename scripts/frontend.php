@@ -24,7 +24,7 @@ function katex_handler($atts, $content = null){
 	wp_enqueue_script('katex');
 	wp_enqueue_style('katex');
 	$break = null;
-	if (strpos($string2, '\\displaystyle') === 0) {
+	if (strpos($content, '\\displaystyle') === 0) {
 		return '<p><script type="text/katex">' . html_entity_decode($content) . '</script></p>';
 	} else {
 		return '<script type="text/katex">' . html_entity_decode($content) . '</script>';

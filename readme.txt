@@ -37,5 +37,8 @@ Jetpack has a LaTeX plugin that uses the WordPress.com service to render the equ
 1. Various equations rendered with WP-KaTeX
 
 == Changelog ==
+= 1.0.1 =
+* Fix `\displaystyle` equations not being put on a new line
+
 = 1.0 =
 * Initial release
