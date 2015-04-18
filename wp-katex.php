@@ -1,13 +1,13 @@
 <?php
 /*
- * Plugin Name: WP-KaTeX
- * Plugin URI: http://andrewsun.com/projects/wp-katex/
- * Description: Embeds beautiful math in your posts with KaTeX, a very fast LaTeX typesetter.
- * Version: 1.3.0
- * Author: Andrew Sun
- * Author URI: http://andrewsun.com/
- * License: GPL2
- */
+Plugin Name: WP-KaTeX
+Plugin URI: http://andrewsun.com/projects/wp-katex/
+Description: Embeds beautiful math in your posts with KaTeX, a very fast LaTeX typesetter.
+Version: 1.3.0
+Author: Andrew Sun
+Author URI: http://andrewsun.com/
+License: GPL2
+*/
 /*  Copyright 2014  Andrew Sun
 
 	This program is free software; you can redistribute it and/or modify
