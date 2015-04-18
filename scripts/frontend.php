@@ -29,7 +29,7 @@ function katex_handler($atts, $content = null){
 		'display' => 'false',
 	), $atts );
 
-	if ($latex_atts['display'] == 'true') {
+	if ($latex_atts['display'] == 'true' || strpos($content, '\\displaystyle') === 0) {
 		return '<script type="text/katex" display="true">' . html_entity_decode($content) . '</script>';
 	} else {
 		return '<script type="text/katex" display="false">' . html_entity_decode($content) . '</script>';
