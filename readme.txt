@@ -3,7 +3,7 @@ Contributors: ascom
 Tags: katex, latex, mathjax, math, equation, equations
 Requires at least: 3.9
 Tested up to: 4.2
-Stable tag: 1.3.0
+Stable tag: 1.3.0.1
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
