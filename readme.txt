@@ -1,9 +1,9 @@
 === WP-KaTeX ===
 Contributors: ascom
-Tags: katex, latex, mathjax, math, equation, equations
+Tags: katex, latex, mathjax, math, equation, equations, tex
 Requires at least: 3.9
 Tested up to: 4.2
-Stable tag: 1.3.0.1
+Stable tag: 1.4.3
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,7 +28,7 @@ Equations in `[latex display="true"]...[/latex]` will be rendered in display mod
 
 KaTeX is fast. It's really fast, compared to MathJax. In fact, it's a staggering 35 times faster than MathJax. Your page will load much faster with KaTeX, especially if it's heavy with equations.
 
-= How about Jetpack...? =
+= How about Jetpack? =
 
 Jetpack has a LaTeX plugin that uses the WordPress.com service to render the equations. However, it uses images, which look ugly when zoomed in, or on high-DPI ("retina") displays. Also, it depends on WordPress.com's servers, and a lot of equations can make the page slow (too many requests).
 
@@ -37,6 +37,10 @@ Jetpack has a LaTeX plugin that uses the WordPress.com service to render the equ
 1. Various equations rendered with WP-KaTeX
 
 == Changelog ==
+= 1.4.3 =
+* Update KaTeX library to 0.4.3
+    * Added support for some `\begin ... \end` environments, including support for `array`, `matrix`, `pmatrix`, `bmatrix`, `vmatrix`, and `Vmatrix`
+    * Added support for optional `\sqrt` arguments, e.g. `\sqrt[3]{x}`
 = 1.3.0.1 =
 * New: render equations in display mode with `[latex display="true"]...[/latex]`
 * Update KaTeX library to 0.3.0
@@ -56,6 +60,9 @@ Jetpack has a LaTeX plugin that uses the WordPress.com service to render the equ
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.4.0 =
+Updated KaTeX library - adds support for more TeX commands
 
 = 1.3.0.1 =
 Add support for a lot of LaTeX symbols
