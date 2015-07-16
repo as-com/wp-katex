@@ -7,15 +7,15 @@ function katex_init() {
 
 	if (is_array($katex_options)) {
 		if (isset($katex_options['katex_jsdelivr_setting']) && $katex_options['katex_jsdelivr_setting'] == 1) {
-			wp_register_style('katex', '//cdn.jsdelivr.net/katex/0.4.3/katex.min.css', false, null);
-			wp_register_script('katex', '//cdn.jsdelivr.net/katex/0.4.3/katex.min.js', array('jquery'), null);
+			wp_register_style('katex', '//cdn.jsdelivr.net/katex/0.5.0/katex.min.css', false, null);
+			wp_register_script('katex', '//cdn.jsdelivr.net/katex/0.5.0/katex.min.js', array('jquery'), null);
 		} else {
-			wp_register_style('katex', plugins_url('assets/katex.min.css', dirname(__FILE__)), false, '0.4.3');
-			wp_register_script('katex', plugins_url('assets/katex.min.js', dirname(__FILE__)), array('jquery'), '0.4.3', true);
+			wp_register_style('katex', plugins_url('assets/katex.min.css', dirname(__FILE__)), false, '0.5.0');
+			wp_register_script('katex', plugins_url('assets/katex.min.js', dirname(__FILE__)), array('jquery'), '0.5.0', true);
 		}
 	} else {
-		wp_register_style('katex', plugins_url('assets/katex.min.css', dirname(__FILE__)), false, '0.4.3');
-		wp_register_script('katex', plugins_url('assets/katex.min.js', dirname(__FILE__)), array('jquery'), '0.4.3', true);
+		wp_register_style('katex', plugins_url('assets/katex.min.css', dirname(__FILE__)), false, '0.5.0');
+		wp_register_script('katex', plugins_url('assets/katex.min.js', dirname(__FILE__)), array('jquery'), '0.5.0', true);
 	}
 }
 add_action('init', 'katex_init');
@@ -42,13 +42,15 @@ function katex_rubber() {
 	(function($) {
 		$("script[type='text/katex']").each(function (i) {
 			try {
+				console.log(this);
 				if (this.attributes.display.textContent == "true") {
-					katex.render(this.text, $("<span></span>").insertAfter(this)[0], { displayMode: true });
+					katex.render(this.text, $("<span></span>").insertAfter(this).get(0), { displayMode: true });
 				} else {
-					katex.render(this.text, $("<span></span>").insertAfter(this)[0]);
+					katex.render(this.text, $("<span></span>").insertAfter(this).get(0));
 				}
 			} catch (e) {
 				$("<span style='color:red'>" + e + "</span>").insertAfter(this);
+				console.log(e);
 			}
 		});
 	})(jQuery);

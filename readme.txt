@@ -3,7 +3,7 @@ Contributors: ascom
 Tags: katex, latex, mathjax, math, equation, equations, tex
 Requires at least: 3.9
 Tested up to: 4.2
-Stable tag: 1.4.3
+Stable tag: 1.5.0
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,6 +37,13 @@ Jetpack has a LaTeX plugin that uses the WordPress.com service to render the equ
 1. Various equations rendered with WP-KaTeX
 
 == Changelog ==
+= 1.5.0 =
+* Update KaTeX library to 0.5.0
+    * Add the `cases` and `Bmatrix` environments.
+    * Add `\checkmark` and `\circledR` symbols.
+	* Improve display of fonts at smaller sizes.
+	* Improve the spacing inside fractions.
+	* Correctly set environments to the ord type.
 = 1.4.3 =
 * Update KaTeX library to 0.4.3
     * Added support for some `\begin ... \end` environments, including support for `array`, `matrix`, `pmatrix`, `bmatrix`, `vmatrix`, and `Vmatrix`
@@ -60,6 +67,9 @@ Jetpack has a LaTeX plugin that uses the WordPress.com service to render the equ
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.5.0 =
+Updated KaTeX library - adds support for more TeX commands
 
 = 1.4.0 =
 Updated KaTeX library - adds support for more TeX commands
