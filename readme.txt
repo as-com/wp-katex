@@ -3,7 +3,7 @@ Contributors: ascom
 Tags: katex, latex, mathjax, math, equation, equations, tex
 Requires at least: 3.9
 Tested up to: 4.3
-Stable tag: 1.5.0+1
+Stable tag: 1.5.1
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,6 +37,15 @@ Jetpack has a LaTeX plugin that uses the WordPress.com service to render the equ
 1. Various equations rendered with WP-KaTeX
 
 == Changelog ==
+= 1.5.1 =
+* Update KaTeX library to 0.5.1
+    * Add the font changing functions `\mathrm`, `\mathit`, `\mathbf`, `\mathbb`, `\mathcal`, `\mathfrak`, `\mathscr`, `\mathsf`, `\mathtt`, `\Bbb`, `\bold`, and `\frak`.
+    * Add the `\limits` and `\nolimits` functions.
+    * Add support for `|` column delimiters in the `array` environment.
+    * Add `\lVert` and `\rVert` symbols.
+    * Allow `\lvert`, `\rvert`, `\lVert`, `\rVert`, `\lgroup`, `\rgroup`, `\lmoustache`, and `\rmoustache` in delimiters.
+    * Fix the spacing of the `\ulcorner`, `\urcorner`, `\llcorner`, `\lrcorner`, `\barwedge`, `\veebar`, `\circledcirc`, `\boxdot`, `\uparrow`, `\Uparrow`, `\downarrow`, `\Downarrow`, `\updownarrow`, `\Updownarrow`, and `\ldots` symbols.
+
 = 1.5.0 =
 * Update KaTeX library to 0.5.0
     * Add the `cases` and `Bmatrix` environments.
