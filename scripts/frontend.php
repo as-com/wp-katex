@@ -7,15 +7,15 @@ function katex_init() {
 
 	if (is_array($katex_options)) {
 		if (isset($katex_options['katex_jsdelivr_setting']) && $katex_options['katex_jsdelivr_setting'] == 1) {
-			wp_register_style('katex', '//cdn.jsdelivr.net/katex/0.5.0/katex.min.css', false, null);
-			wp_register_script('katex', '//cdn.jsdelivr.net/katex/0.5.0/katex.min.js', array('jquery'), null);
+			wp_register_style('katex', '//cdn.jsdelivr.net/katex/0.5.1/katex.min.css', false, null);
+			wp_register_script('katex', '//cdn.jsdelivr.net/katex/0.5.1/katex.min.js', array('jquery'), null);
 		} else {
-			wp_register_style('katex', plugins_url('assets/katex.min.css', dirname(__FILE__)), false, '0.5.0');
-			wp_register_script('katex', plugins_url('assets/katex.min.js', dirname(__FILE__)), array('jquery'), '0.5.0', true);
+			wp_register_style('katex', plugins_url('assets/katex.min.css', dirname(__FILE__)), false, '0.5.1');
+			wp_register_script('katex', plugins_url('assets/katex.min.js', dirname(__FILE__)), array('jquery'), '0.5.1', true);
 		}
 	} else {
-		wp_register_style('katex', plugins_url('assets/katex.min.css', dirname(__FILE__)), false, '0.5.0');
-		wp_register_script('katex', plugins_url('assets/katex.min.js', dirname(__FILE__)), array('jquery'), '0.5.0', true);
+		wp_register_style('katex', plugins_url('assets/katex.min.css', dirname(__FILE__)), false, '0.5.1');
+		wp_register_script('katex', plugins_url('assets/katex.min.js', dirname(__FILE__)), array('jquery'), '0.5.1', true);
 	}
 }
 add_action('init', 'katex_init');
