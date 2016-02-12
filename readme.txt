@@ -3,7 +3,7 @@ Contributors: ascom
 Tags: katex, latex, mathjax, math, equation, equations, tex
 Requires at least: 3.9
 Tested up to: 4.3
-Stable tag: 1.5.1
+Stable tag: 1.5.1+1
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,6 +37,10 @@ Jetpack has a LaTeX plugin that uses the WordPress.com service to render the equ
 1. Various equations rendered with WP-KaTeX
 
 == Changelog ==
+= 1.5.1+1 =
+* Fix issue with wptexturize causing syntax errors
+* Optimize script loading
+
 = 1.5.1 =
 * Update KaTeX library to 0.5.1
     * Add the font changing functions `\mathrm`, `\mathit`, `\mathbf`, `\mathbb`, `\mathcal`, `\mathfrak`, `\mathscr`, `\mathsf`, `\mathtt`, `\Bbb`, `\bold`, and `\frak`.
@@ -76,6 +80,9 @@ Jetpack has a LaTeX plugin that uses the WordPress.com service to render the equ
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.5.1+1 =
+Fixed issue with wptexturize causing syntax errors
 
 = 1.5.0 =
 Updated KaTeX library - adds support for more TeX commands
