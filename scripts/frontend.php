@@ -41,25 +41,32 @@ add_shortcode('latex', 'katex_handler');
 
 function katex_rubber() {
 	global $katex_using;
-	// (function($) {
-	// 		$("script[type='text/katex']").each(function (i) {
-	// 			try {
-	// 				console.log(this);
-	// 				if (this.attributes.display.textContent == "true") {
-	// 					katex.render(this.text, $("<span></span>").insertAfter(this).get(0), { displayMode: true });
-	// 				} else {
-	// 					katex.render(this.text, $("<span></span>").insertAfter(this).get(0));
-	// 				}
-	// 			} catch (e) {
-	// 				$("<span style='color:red'>" + e + "</span>").insertAfter(this);
-	// 				console.log(e);
-	// 			}
-	// 		});
-	// 	})(jQuery);
 	if ($katex_using) {
 	?>
-	<script>!function(t){t("script[type='text/katex']").each(function(e){try{console.log(this),"true"==this.attributes.display.textContent?katex.render(this.text,t("<span></span>").insertAfter(this).get(0),{displayMode:!0}):katex.render(this.text,t("<span></span>").insertAfter(this).get(0))}catch(s){t("<span style='color:red'>"+s+"</span>").insertAfter(this),console.log(s)}})}(jQuery);</script>
+	<script>
+		(function($) {
+			$("script[type='text/katex']").each(function (i) {
+				try {
+					console.log(this);
+					if (this.attributes.display.textContent == "true") {
+						katex.render(this.text, $("<span></span>").insertAfter(this).get(0), { displayMode: true });
+					} else {
+						katex.render(this.text, $("<span></span>").insertAfter(this).get(0));
+					}
+				} catch (e) {
+					$("<span style='color:red'>" + e + "</span>").insertAfter(this);
+					console.log(e);
+				}
+			});
+		})(jQuery);
+	</script>
 	<?php
 	}
 }
 add_action('wp_footer', 'katex_rubber', 100);
+
+function katex_exempt_wptexturize($shortcodes) {
+	$shortcodes[] = 'latex';
+	return $shortcodes;
+}
+add_filter('no_texturize_shortcodes', 'katex_exempt_wptexturize');
