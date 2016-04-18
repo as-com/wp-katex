@@ -3,7 +3,7 @@ Contributors: ascom
 Tags: katex, latex, mathjax, math, equation, equations, tex
 Requires at least: 3.9
 Tested up to: 4.5
-Stable tag: 1.5.1+1
+Stable tag: 1.6.0
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,6 +37,16 @@ Jetpack has a LaTeX plugin that uses the WordPress.com service to render the equ
 1. Various equations rendered with WP-KaTeX
 
 == Changelog ==
+= 1.6.0 =
+* Update KaTeX library to 0.6.0
+    * Introduce the `aligned` environment.
+    * Add `\gt` and `\lt`.
+    * Fix sub- and super-scripts not being centered inside of math display.
+    * Add `\underline` support.
+    * Remove 3px border around rules (bug fix).
+    * Set the greediness of font functions to 2 so that `e^\mathbf{x}` will parse (bug fix).
+* Optimize script loading (again)
+
 = 1.5.1+1 =
 * Fix issue with wptexturize causing syntax errors
 * Optimize script loading
@@ -80,6 +90,9 @@ Jetpack has a LaTeX plugin that uses the WordPress.com service to render the equ
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.6.0 = 
+Add support for `aligned`, `\gt`, `\lt`, and `\underline`
 
 = 1.5.1+1 =
 Fixed issue with wptexturize causing syntax errors

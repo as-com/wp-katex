@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: WP-KaTeX
-Plugin URI: http://andrewsun.com/projects/wp-katex/
+Plugin URI: https://andrewsun.com/projects/wp-katex/
 Description: Embeds beautiful math in your posts with KaTeX, a very fast LaTeX typesetter.
-Version: 1.5.1+1
+Version: 1.6.0
 Author: Andrew Sun
-Author URI: http://andrewsun.com/
+Author URI: https://andrewsun.com/
 License: GPL2
 */
 /*  Copyright 2015  Andrew Sun
