@@ -6,17 +6,12 @@ $katex_options = get_option('katex_settings');
 function katex_init() {
 	global $katex_options;
 
-	if (is_array($katex_options)) {
-		if (isset($katex_options['katex_jsdelivr_setting']) && $katex_options['katex_jsdelivr_setting'] == 1) {
-			wp_register_style('katex', '//cdn.jsdelivr.net/katex/0.6.0/katex.min.css', false, null);
-			wp_register_script('katex', '//cdn.jsdelivr.net/katex/0.6.0/katex.min.js', array('jquery'), null, true);
-		} else {
-			wp_register_style('katex', plugins_url('assets/katex.min.css', dirname(__FILE__)), false, '0.6.0');
-			wp_register_script('katex', plugins_url('assets/katex.min.js', dirname(__FILE__)), array('jquery'), '0.6.0', true);
-		}
+	if (is_array($katex_options) && isset($katex_options['katex_jsdelivr_setting']) && $katex_options['katex_jsdelivr_setting'] == 1) {
+		wp_register_style('katex', '//cdn.jsdelivr.net/katex/0.6.0/katex.min.css', false, null);
+		wp_register_script('katex', '//cdn.jsdelivr.net/katex/0.6.0/katex.min.js', array(), null, true);
 	} else {
 		wp_register_style('katex', plugins_url('assets/katex.min.css', dirname(__FILE__)), false, '0.6.0');
-		wp_register_script('katex', plugins_url('assets/katex.min.js', dirname(__FILE__)), array('jquery'), '0.6.0', true);
+		wp_register_script('katex', plugins_url('assets/katex.min.js', dirname(__FILE__)), array(), '0.6.0', true);
 	}
 }
 add_action('init', 'katex_init');
@@ -26,7 +21,6 @@ function katex_handler($atts, $content = null){
 	wp_enqueue_script('katex');
 	wp_enqueue_style('katex');
 	$katex_using = true;
-	// $break = null; //?
 	$latex_atts = shortcode_atts( array(
 		'display' => 'false',
 	), $atts );
@@ -43,7 +37,7 @@ function katex_rubber() {
 	global $katex_using;
 	if ($katex_using) {
 	?>
-	<script>!function(t){"use strict";t("script[type='text/katex']").each(function(e){var r=t(this),a={displayMode:"true"===r.attr("data-display"),throwOnError:!1};katex.render(this.text,t("<span></span>").insertAfter(this).get(0),a)})}(jQuery);</script>
+	<script>!function(){var t=document.querySelectorAll("script[type='text/katex']");Array.prototype.forEach.call(t,function(t,e){var r={displayMode:"true"===t.getAttribute("data-display"),throwOnError:!1},a=document.createElement("span");katex.render(this.text,a,r),t.parentNode.replaceChild(a,t)})}();</script>
 	<?php
 	}
 }

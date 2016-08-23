@@ -1,10 +1,12 @@
-(function($) {
-	$("script[type='text/katex']").each(function(i) {
-		var $this = $(this);
+(function() {
+	var katexes = document.querySelectorAll("script[type='text/katex']");
+	Array.prototype.forEach.call(katexes, function(el, i){
 		var options = {
-			displayMode: $this.attr("data-display") === "true",
+			displayMode: el.getAttribute("data-display") === "true",
 			throwOnError: false
 		};
-		katex.render(this.text, $("<span></span>").insertAfter(this).get(0), options);
+		var eq = document.createElement("span");
+		katex.render(this.text, eq, options);
+		el.parentNode.replaceChild(eq, el);
 	});
-})(jQuery);
+})();
