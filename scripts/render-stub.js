@@ -7,7 +7,7 @@
 			throwOnError: false
 		};
 		var eq = document.createElement("span");
-		katex.render(this.text, eq, options);
+		katex.render(el.textContent, eq, options);
 		el.parentNode.replaceChild(eq, el);
 	});
 })();
