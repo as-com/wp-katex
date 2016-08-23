@@ -32,33 +32,18 @@ function katex_handler($atts, $content = null){
 	), $atts );
 
 	if ($latex_atts['display'] == 'true' || strpos($content, '\\displaystyle') === 0) {
-		return '<script type="text/katex" display="true">' . html_entity_decode($content) . '</script>';
+		return '<script type="text/katex" data-display="true">' . html_entity_decode($content) . '</script>';
 	} else {
-		return '<script type="text/katex" display="false">' . html_entity_decode($content) . '</script>';
+		return '<script type="text/katex" data-display="false">' . html_entity_decode($content) . '</script>';
 	}
 }
 add_shortcode('latex', 'katex_handler');
 
 function katex_rubber() {
 	global $katex_using;
-	// (function($) {
-	// 		$("script[type='text/katex']").each(function (i) {
-	// 			try {
-	// 				console.log(this);
-	// 				if (this.attributes.display.textContent == "true") {
-	// 					katex.render(this.text, $("<span></span>").insertAfter(this).get(0), { displayMode: true });
-	// 				} else {
-	// 					katex.render(this.text, $("<span></span>").insertAfter(this).get(0));
-	// 				}
-	// 			} catch (e) {
-	// 				$("<span style='color:red'>" + e + "</span>").insertAfter(this);
-	// 				console.log(e);
-	// 			}
-	// 		});
-	// 	})(jQuery);
 	if ($katex_using) {
 	?>
-	<script>!function(t){t("script[type='text/katex']").each(function(e){try{console.log(this),"true"==this.attributes.display.textContent?katex.render(this.text,t("<span></span>").insertAfter(this).get(0),{displayMode:!0}):katex.render(this.text,t("<span></span>").insertAfter(this).get(0))}catch(s){t("<span style='color:red'>"+s+"</span>").insertAfter(this),console.log(s)}})}(jQuery);</script>
+	<script>!function(t){"use strict";t("script[type='text/katex']").each(function(e){var r=t(this),a={displayMode:"true"===r.attr("data-display"),throwOnError:!1};katex.render(this.text,t("<span></span>").insertAfter(this).get(0),a)})}(jQuery);</script>
 	<?php
 	}
 }
