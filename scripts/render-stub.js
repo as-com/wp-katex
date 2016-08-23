@@ -7,7 +7,12 @@
 			throwOnError: false
 		};
 		var eq = document.createElement("span");
-		katex.render(el.textContent, eq, options);
+		try {
+			katex.render(el.textContent, eq, options);
+		} catch (e) {
+			el.style.color = "red";
+			el.textContent = e.message;
+		}
 		el.parentNode.replaceChild(eq, el);
 	});
 })();

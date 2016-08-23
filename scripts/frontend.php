@@ -37,7 +37,7 @@ function katex_rubber() {
 	global $katex_using;
 	if ($katex_using) {
 	?>
-	<script>!function(){"use strict";var t=document.querySelectorAll("script[type='text/katex']");Array.prototype.forEach.call(t,function(t,e){var r={displayMode:"true"===t.getAttribute("data-display"),throwOnError:!1},a=document.createElement("span");katex.render(t.textContent,a,r),t.parentNode.replaceChild(a,t)})}();</script>
+	<script>!function(){"use strict";var t=document.querySelectorAll("script[type='text/katex']");Array.prototype.forEach.call(t,function(t,e){var r={displayMode:"true"===t.getAttribute("data-display"),throwOnError:!1},a=document.createElement("span");try{katex.render(t.textContent,a,r)}catch(o){t.style.color="red",t.textContent=o.message}t.parentNode.replaceChild(a,t)})}();</script>
 	<?php
 	}
 }
