@@ -4,7 +4,7 @@ Donate link: https://andrewsun.com/donate/
 Tags: katex, latex, mathjax, math, equation, equations, tex
 Requires at least: 3.9
 Tested up to: 4.6
-Stable tag: 1.6.0
+Stable tag: 1.6.0+1
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,10 @@ Jetpack has a LaTeX plugin that uses the WordPress.com service to render the equ
 1. Various equations rendered with WP-KaTeX
 
 == Changelog ==
+= 1.6.0+1 =
+* Removed dependency on jQuery
+* Code cleanup
+
 = 1.6.0 =
 * Update KaTeX library to 0.6.0
     * Introduce the `aligned` environment.
