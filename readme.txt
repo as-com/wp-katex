@@ -41,6 +41,7 @@ Jetpack has a LaTeX plugin that uses the WordPress.com service to render the equ
 = 1.6.0+1 =
 * Removed dependency on jQuery
 * Code cleanup
+* Accessibility improvements
 
 = 1.6.0 =
 * Update KaTeX library to 0.6.0

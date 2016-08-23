@@ -68,7 +68,7 @@ function katex_options_page(  ) {
 
 	?>
 	<div class="wrap">
-		<h2>WP-KaTeX</h2>
+		<h1>WP-KaTeX</h1>
 		<form action='options.php' method='post'>
 
 			<?php
