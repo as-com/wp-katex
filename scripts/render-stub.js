@@ -1,4 +1,5 @@
 (function() {
+	"use strict";
 	var katexes = document.querySelectorAll("script[type='text/katex']");
 	Array.prototype.forEach.call(katexes, function(el, i){
 		var options = {
