@@ -10,8 +10,8 @@
 		try {
 			katex.render(el.textContent, eq, options);
 		} catch (e) {
-			el.style.color = "red";
-			el.textContent = e.message;
+			eq.style.color = "red";
+			eq.textContent = e.message;
 		}
 		el.parentNode.replaceChild(eq, el);
 	});
