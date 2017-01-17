@@ -121,6 +121,9 @@ Jetpack has a LaTeX plugin that uses the WordPress.com service to render the equ
 
 == Upgrade Notice ==
 
+= 1.7.0 =
+New rendering method and a few new commands now supported
+
 = 1.6.0 = 
 Add support for `aligned`, `\gt`, `\lt`, and `\underline`
 
