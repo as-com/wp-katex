@@ -3,12 +3,12 @@
 Plugin Name: WP-KaTeX
 Plugin URI: https://andrewsun.com/projects/wp-katex/
 Description: Embeds beautiful math in your posts with KaTeX, a very fast LaTeX typesetter.
-Version: 1.6.0+1
+Version: 1.7.0
 Author: Andrew Sun
 Author URI: https://andrewsun.com/
 License: GPL2
 */
-/*  Copyright 2015  Andrew Sun
+/*  Copyright 2017  Andrew Sun
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as 

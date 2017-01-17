@@ -4,7 +4,7 @@ Donate link: https://andrewsun.com/donate/
 Tags: katex, latex, mathjax, math, equation, equations, tex
 Requires at least: 3.9
 Tested up to: 4.7
-Stable tag: 1.6.0+1
+Stable tag: 1.7.0
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,29 @@ Jetpack has a LaTeX plugin that uses the WordPress.com service to render the equ
 1. Various equations rendered with WP-KaTeX
 
 == Changelog ==
+= 1.7.0 =
+* New rendering method - improved experience for users with JavaScript disabled
+* Updated KaTeX library to 0.7.0
+    * Add `\kern`
+    * Add `\mod`, `\bmod`, `\pmod`, and `\pod`
+    * Add `\middle`
+    * Add `\ldots`, `\textellipsis`, and `\mathellipsis`
+    * Add `\#`, `\&`, `\$`, `\%`, `\_`, `\{`, and `\}` in text mode
+    * Add `\stackrel`
+    * Add `\atop`
+    * Add `--`, `---`, `` ` ``, `'`, `` `​` ``, `''`, `\degree`, `\pounds`, `\maltese`
+    * Add `\mathord`, `\mathbin`, `\mathrel`, `\mathopen`, `\mathclose`, `\mathpunct`, `\mathinner`, and `\mathop`
+    * Add `\textrm`, `\textit`, `\textbf`, `\texttt`, `\textsf`, and `\textnormal`
+    * Combine adjacent spans in text mode (performance)
+    * Don't apply italic correction in text mode (bug fix)
+    * Fix the MathML fence attribute on delimiters (bug fix)
+    * Fix converting bins to ords (bug fix)
+    * Make `\llap` and `\rlap` produce ords (bug fix)
+    * Fix spacing around `\color`, `\mathbf`, and in other places (bug fix)
+    * Add per-style font metrics (bug fix)
+    * Fix subscript positioning with changed-font bases (bug fix)
+    * Fix superscript/subscript centering in fractions (bug fix)
+
 = 1.6.0+1 =
 * Removed dependency on jQuery
 * Code cleanup
