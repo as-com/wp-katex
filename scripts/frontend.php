@@ -26,9 +26,9 @@ function katex_handler($atts, $content = null){
 	), $atts );
 
 	if ($latex_atts['display'] == 'true' || strpos($content, '\\displaystyle') === 0) {
-		return '<script type="text/katex" data-display="true">' . html_entity_decode($content) . '</script>';
+		return '<span class="wp-katex-eq" data-display="true">' . htmlspecialchars(html_entity_decode($content)) . '</span>';
 	} else {
-		return '<script type="text/katex" data-display="false">' . html_entity_decode($content) . '</script>';
+		return '<span class="wp-katex-eq" data-display="false">' . htmlspecialchars(html_entity_decode($content)) . '</span>';
 	}
 }
 add_shortcode('latex', 'katex_handler');
@@ -37,7 +37,7 @@ function katex_rubber() {
 	global $katex_using;
 	if ($katex_using) {
 	?>
-	<script>!function(){"use strict";var t=document.querySelectorAll("script[type='text/katex']");Array.prototype.forEach.call(t,function(t,e){var r={displayMode:"true"===t.getAttribute("data-display"),throwOnError:!1},a=document.createElement("span");try{katex.render(t.textContent,a,r)}catch(o){a.style.color="red",a.textContent=o.message}t.parentNode.replaceChild(a,t)})}();</script>
+	<script>!function(){"use strict";var e=document.querySelectorAll(".wp-katex-eq");Array.prototype.forEach.call(e,function(e){var t={displayMode:"true"===e.getAttribute("data-display"),throwOnError:!1},r=document.createElement("span");try{katex.render(e.textContent,r,t)}catch(a){r.style.color="red",r.textContent=a.message}e.parentNode.replaceChild(r,e)})}();</script>
 	<?php
 	}
 }
