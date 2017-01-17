@@ -26,7 +26,7 @@ function katex_handler($atts, $content = null){
 	), $atts );
 
 	if ($latex_atts['display'] == 'true' || strpos($content, '\\displaystyle') === 0) {
-		return '<span class="wp-katex-eq" data-display="true">' . htmlspecialchars(html_entity_decode($content)) . '</span>';
+		return '<span class="wp-katex-eq katex-display" data-display="true">' . htmlspecialchars(html_entity_decode($content)) . '</span>';
 	} else {
 		return '<span class="wp-katex-eq" data-display="false">' . htmlspecialchars(html_entity_decode($content)) . '</span>';
 	}
