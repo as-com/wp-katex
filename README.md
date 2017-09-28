@@ -4,8 +4,8 @@
 **Tags:** katex, latex, mathjax, math, equation, equations, tex  
 **Requires at least:** 3.9  
 **Tested up to:** 4.8  
-**Stable tag:** 1.7.0  
-**Requires PHP**: 5.3
+**Stable tag:** 1.8.3  
+**Requires PHP**: 5.3  
 **License:** GPL2  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -198,6 +198,9 @@ Jetpack has a LaTeX plugin that uses the WordPress.com service to render the equ
 
 
 ## Upgrade Notice 
+
+### 1.8.3
+Lots of commands and features now supported
 
 
 ### 1.7.0 
