@@ -7,11 +7,11 @@ function katex_init() {
 	global $katex_options;
 
 	if (is_array($katex_options) && isset($katex_options['katex_jsdelivr_setting']) && $katex_options['katex_jsdelivr_setting'] == 1) {
-		wp_register_style('katex', '//cdn.jsdelivr.net/katex/0.7.0/katex.min.css', false, null);
-		wp_register_script('katex', '//cdn.jsdelivr.net/katex/0.7.0/katex.min.js', array(), null, true);
+		wp_register_style('katex', '//cdn.jsdelivr.net/npm/katex@0.8.3/dist/katex.min.css', false, null);
+		wp_register_script('katex', '//cdn.jsdelivr.net/npm/katex@0.8.3/dist/katex.min.js', array(), null, true);
 	} else {
-		wp_register_style('katex', plugins_url('assets/katex.min.css', dirname(__FILE__)), false, '0.7.0');
-		wp_register_script('katex', plugins_url('assets/katex.min.js', dirname(__FILE__)), array(), '0.7.0', true);
+		wp_register_style('katex', plugins_url('assets/katex.min.css', dirname(__FILE__)), false, '0.8.3');
+		wp_register_script('katex', plugins_url('assets/katex.min.js', dirname(__FILE__)), array(), '0.8.3', true);
 	}
 }
 add_action('init', 'katex_init');
