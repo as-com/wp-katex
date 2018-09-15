@@ -8,7 +8,7 @@ Author: Andrew Sun
 Author URI: https://andrewsun.com/
 License: GPL2
 */
-/*  Copyright 2017  Andrew Sun
+/*  Copyright 2018  Andrew Sun
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as 
@@ -24,9 +24,8 @@ License: GPL2
 	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-if ( is_admin() && ( !defined( 'DOING_AJAX' ) || !DOING_AJAX ) ) {
+if ( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
 	require 'scripts/admin.php';
-}
-else {
+} else {
 	require 'scripts/frontend.php';
 }
