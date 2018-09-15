@@ -3,7 +3,7 @@ global $katex_options;
 global $katex_using;
 $katex_options = get_option( 'katex_settings' );
 
-define('WP_KATEX_JS_VERSION', '0.8.3');
+define('WP_KATEX_JS_VERSION', '0.9.0');
 
 function katex_init() {
 	global $katex_options;
