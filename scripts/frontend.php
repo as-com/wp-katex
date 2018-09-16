@@ -29,7 +29,8 @@ function katex_handler( $atts, $content = null ) {
 	), $atts );
 
 	$enc = htmlspecialchars( html_entity_decode( $content ) );
-	if ( $latex_atts['display'] || strpos( $content, '\\displaystyle' ) === 0 ) {
+	$displayAttr = $latex_atts['display']; // TODO: This is disgusting
+	if ( $displayAttr === "true" || $displayAttr === "1" || strpos( $content, '\\displaystyle' ) === 0 ) {
 		return '<span class="wp-katex-eq katex-display" data-display="true">' . $enc . '</span>';
 	} else {
 		return '<span class="wp-katex-eq" data-display="false">' . $enc . '</span>';
@@ -42,7 +43,7 @@ function katex_rubber() {
 	global $katex_using;
 	if ( $katex_using ) {
 		// @formatter:off
-		?><script>!function(){"use strict";var e=document.querySelectorAll(".wp-katex-eq");Array.prototype.forEach.call(e,function(e){var t={displayMode:"true"===e.getAttribute("data-display"),throwOnError:!1},r=document.createElement("span");try{katex.render(e.textContent,r,t)}catch(a){r.style.color="red",r.textContent=a.message}e.parentNode.replaceChild(r,e)})}();</script><?php
+		?><script>!function(){"use strict";for(var e=document.querySelectorAll(".wp-katex-eq"),t=0;t<e.length;t++){var r=e[t],a=document.createElement("span");try{katex.render(r.textContent,a,{displayMode:"true"===r.getAttribute("data-display"),throwOnError:!1})}catch(n){a.style.color="red",a.textContent=n.message}r.parentNode.replaceChild(a,r)}}();</script><?php
 		// @formatter:on
 	}
 }
