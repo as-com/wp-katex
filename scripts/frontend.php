@@ -3,7 +3,7 @@ global $katex_options;
 global $katex_using;
 $katex_options = get_option( 'katex_settings' );
 
-define('WP_KATEX_JS_VERSION', '0.9.0');
+define( 'WP_KATEX_JS_VERSION', '0.10.0' );
 
 function katex_init() {
 	global $katex_options;
@@ -28,7 +28,7 @@ function katex_handler( $atts, $content = null ) {
 		'display' => 'false',
 	), $atts );
 
-	$enc = htmlspecialchars( html_entity_decode( $content ) );
+	$enc         = htmlspecialchars( html_entity_decode( $content ) );
 	$displayAttr = $latex_atts['display']; // TODO: This is disgusting
 	if ( $displayAttr === "true" || $displayAttr === "1" || strpos( $content, '\\displaystyle' ) === 0 ) {
 		return '<span class="wp-katex-eq katex-display" data-display="true">' . $enc . '</span>';

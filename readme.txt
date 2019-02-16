@@ -3,8 +3,8 @@ Contributors: ascom
 Donate link: https://andrewsun.com/donate/
 Tags: katex, latex, mathjax, math, equation, equations, tex
 Requires at least: 3.9
-Tested up to: 4.9
-Stable tag: 1.9.1
+Tested up to: 5.1
+Stable tag: 1.10.0
 Requires PHP: 5.3
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -39,6 +39,100 @@ Jetpack has a LaTeX plugin that uses the WordPress.com service to render the equ
 1. Various equations rendered with WP-KaTeX
 
 == Changelog ==
+= 1.10.0 =
+* Updated KaTeX library to 0.10.0
+    * Added
+        - Unicode: °, delimiters, 1D400-1D7FF, \ll, \lll, ≘≙≚≛≝≞≟, Unicode Mathematical Alphanumeric Symbols, ⟂ ¬ ⊨ ‼ ∌ ≲ ⩽ ⪅ ≶ ⋚ ⪋, corner, ⟦⟧ (#1203, #1207, #1260, #1273, #1274, #1232, #1377, #1389, #1459, #1750)
+        - \yen support on text mode (#1208)
+        - `\(` (#1213)
+        - Add defineSymbol to the main katex object (#1263)
+        - Capital Greek letters (#1283, #1285)
+        - Add version to katex object (#1279, #1475)
+        - \copyright, \textregistered, \textcircled (#1073)
+        - Tilde \textasciitilde (#1286)
+        - Line breaks for inline formulas (#1287)
+        - \hline (#1306)
+        - Top-level \newline and `\\` in inline math (#1298)
+        - Strict mode, unicode text in math mode (#1117, #1278)
+        - Strict setting for \newline display-mode behavior (#1314)
+        - Allow all Unicode symbols in nonstrict mode (#1217)
+        - \tag, \tag*, and \gdef (#1309)
+        - \def, \gdef, and \global\def (#1348, #1425)
+        - Change default maxExpand limit to 1000 (#1383)
+        - \cfrac (#1392)
+        - \arraystretch as a macro definition (#1381)
+        - Add ability to create a dashed vertical line in arrays, using ':' (#1395)
+        - \widecheck (#1406)
+        - \hdashline (#1407)
+        - \newcommand, \renewcommand, \providecommand (#1382)
+        - Add a utility function (setFontMetrics) to extend builtin fontMetrics (#1269)
+        - \oiint and \oiiint (#1430)
+        - Remove `match-at` dependency, use RegExp for lexer (#1447)
+        - \brace and \brack (#1453)
+        - Allow only allowed protocols in \href (#1440)
+          - **BREAKING CHANGE:** Only "http", "https", "mailto", and relative URLs are allowed in \href and \url by default.
+        - \genfrac and \above (#1455, #1458)
+        - \char character escaping and nicer MathML via \html@mathml (#1454)
+        - \@binrel (#1487)
+        - \pmb (#1418)
+        - 6-digit color without # (#1690)
+        - \mathnormal (#1700)
+        - \lparen and \rparen (#1741)
+        - `\>` (#1752)
+    * Fixed:
+        - Fix nested math mode in non-default text mode (#1111)
+        - Fix contenteditable mode (#1179)
+        - Work around negative space bug in Chrome (#1194)
+        - Fix \nobreakspace (#1200)
+        - Fix instant mode switching for $, \(, \text (#1213)
+        - Add metrics for \S and \P (#1224)
+        - Fix anchor.toMarkup (#1246)
+        - Specify height for SVG elements (#1252)
+        - Include Bold-Italic fonts for \boldsymbol (#1257)
+        - Fix space width in \texttt (#1261)
+        - Fix \underset (#1277)
+        - Remove special \verb space handling now that space is in Typewriter-Regular (#1258)
+        - Switch makeGlue from .mord .rule to .mspace (#1295)
+        - Fix ~ in \verb (#1286)
+        - Stop throwing ParseError when throwOnError is false (#1169, #1302, #1308)
+        - Fix extensible arrow sup vertical alignment (#1256)
+        - Adjust \underset alignment and spacing (#1290)
+        - Revert frac-lines and \rule to borders (min-height) (#1249, #1417, #1594)
+        - Fix vertical alignment of \underbrace (#1304)
+        - Use one strut instead of two (#1307)
+        - Fix MacroExpander space handling (#1314)
+        - Cleanup MathML `<mrow>`, `<mtext>`, `<mn>` (#1338)
+        - Fix lap vertical alignment. (#1162)
+        - Fix nested \tfrac (#1370)
+        - Fix \coloneq etc (#1372)
+        - Fix wide character spacing (#1371)
+        - Fix auto-render \\[…] bug (#1375)
+        - Rewrite spacing commands as macros (#1156)
+        - Enable output modules to be used in browser or Node (#1401)
+        - Add vertical kern to \vdots (#1402)
+        - Implement \neq and \notin via macros like LaTeX's (#1400, #1499)
+        - Improve \cancel (#1398)
+        - Fix ligatures vs. \tt (#1379)
+        - Implement \colon as amsmath does (#1410)
+        - Automatic mrel/mbin spacing for \boldsymbol (#1388)
+        - Phantom text (#1449)
+        - Fix arrowheads for mhchem <--> (#1451)
+        - Set `documentFragment.style` to empty object (#1471)
+        - Remove tree cloning before building HTML (#1470)
+        - Fix \operatorname to support general math functions (#1461)
+        - Use \not character without left side-bearing correction (#1267)
+        - Remove codes that require expensive polyfill (#1469, #1563, #1591, #1597)
+        - Fix \not vertical alignment (#1497)
+        - Comments without terminating newlines, \href fixes, \url support (#1529)
+        - Fix \textdaggerdbl (#1539)
+        - Fix \neq (#1548, #1574)
+        - Fix wide characters (#1549)
+        - Fix \fbox (#1550)
+        - Fix \Large roots (#1485)
+        - Remove duplicate defineFunction invocation for \mathop (#1701)
+        - Fix tag positioning to live within katex-html parent (#1721)
+        - Fix \mathit font and italic correction (#1700)
+
 = 1.9.1 =
 * Fix bug causing all equations to show in display style
 
