@@ -4,7 +4,7 @@
 **Tags:** katex, latex, mathjax, math, equation, equations, tex  
 **Requires at least:** 3.9  
 **Tested up to:** 5.1  
-**Stable tag:** 1.10.0  
+**Stable tag:** 1.10.1  
 **Requires PHP:** 5.3  
 **License:** GPL2  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
@@ -48,6 +48,29 @@ Jetpack has a LaTeX plugin that uses the WordPress.com service to render the equ
 
 
 ## Changelog 
+
+### 1.10.0 
+* Updated KaTeX library to 0.10.1
+	* Added
+		- ECMAScript module for contrib (#1624)
+		- mhchem extension (#1436)
+		- auto-render: optional pre-process callback (#1784)
+		- \argmax and \argmin (#1820)
+		- \textbackslash and \textasciicircum (#1839)
+		- leqno and fleqn support (#1814)
+
+	* Fixed
+		- Support blackboard bold in text mode (#1757)
+		- Fix spacings in semisimple groups (#1706)
+		- Fix parsing comments (#1789)
+		- Fix \\ and \newline after operator (#1796)
+		- Fix \hphantom width (#1809)
+		- Remove double encoding in MathML (#1813)
+		- Fix Unicode bigcup (#1836)
+		- Fix \genfrac w/ empty delimiter arguments (#1816)
+		- \fbox inherits default color (#1847)
+		- Fix \not and \neq on Chrome 72 (#1852)
+
 
 ### 1.10.0 
 * Updated KaTeX library to 0.10.0
