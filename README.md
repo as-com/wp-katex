@@ -49,7 +49,7 @@ Jetpack has a LaTeX plugin that uses the WordPress.com service to render the equ
 
 ## Changelog 
 
-### 1.10.0 
+### 1.10.1
 * Updated KaTeX library to 0.10.1
 	* Added
 		- ECMAScript module for contrib (#1624)
