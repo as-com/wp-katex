@@ -3,8 +3,8 @@ Contributors: ascom
 Donate link: https://andrewsun.com/donate/
 Tags: katex, latex, mathjax, math, equation, equations, tex
 Requires at least: 3.9
-Tested up to: 5.1
-Stable tag: 1.10.1+1
+Tested up to: 5.2
+Stable tag: 1.11.0
 Requires PHP: 5.3
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -23,6 +23,7 @@ Equations in `[latex display="true"]...[/latex]` will be rendered in display mod
 == Installation ==
 1. Upload the `katex` folder to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
+1. Disable any plugins that may interfere with this plugin, such as Jetpack's Beautiful Math module
 1. Use the `[latex]` shortcode in your posts and pages
 
 == Frequently Asked Questions ==
@@ -39,6 +40,78 @@ Jetpack has a LaTeX plugin that uses the WordPress.com service to render the equ
 1. Various equations rendered with WP-KaTeX
 
 == Changelog ==
+= 1.11.0 =
+* Updated KaTeX library to 0.11.0
+    * Added:
+        - **BREAKING CHANGE:** trust setting to indicate whether input text is trusted (#1794)
+          - `\href` and `\url` will break without adjusting the trust setting
+          - This is currently not supported by the plugin
+        - Add test for double square brackets to katex-spec (#1956)
+        - Add option to render only MathML so that its visible (#1966)
+        - Support {smallmatrix}, {subarray}, and \substack (#1969)
+        - Enable minRuleThickness in rendering options (#1964)
+        - Add \plim (#1952)
+        - Support Unicode \digamma (#2010)
+        - Support \operatorname* (#1899)
+        - Support \includegraphics, with appropriate trust setting (#2053)
+
+    * Changed:
+        - Document mhchem \cf not supported (use \ce instead) (#2008)
+        - Unicode characters in math render in text mode (#2040)
+
+    * Fixed:
+        - Improve output of fonts in MathML (#1965)
+        - Fix \pmb (#1924)
+        - \color affects following \right, put array cells in their own groups (#1845)
+        - Improve MathML for classes (#1929)
+        - Prevent gaps in tall delimiters (#1986)
+        - Fix \sqrt SVG path (#2009)
+        - Do not force sizing groups to display inline-block (#2044)
+        - Fix font choice in operators like \log (e.g. \boldsymbol{\log}) (#2041)
+        - Fix argument font sizing in \fbox and \raisebox, fix font sizing in \TeX, \LaTeX, \KaTeX (#1787)
+* Updated KaTeX library to 0.10.2
+    - Added:
+        - Approximate font metrics only when metrics don't exist (#1898)
+        - Add KaTeX version to stylesheet and troubleshooting guide (#1893)
+        - Add symbol double square brackets (#1947, #1954)
+        - Support double-square curly braces (#1953)
+
+    - Changed:
+        - Added 'katex-element' (#1905)
+        - Include extensions mhchem & copy-tex in home-page (#1932)
+
+    - Fixed:
+        - Fix \Rho (#1870)
+        - Fix nested \dfrac (#1825)
+        - Improve MathML accents (#1877)
+        - Improve MathML for \overset, \stackrel, and \underset (#1886)
+        - Fix \not (U+E020) RBearing (width) (#1878)
+        - Fix ApplyFunction character (#1890)
+        - Improve MathML for \limits (#1897)
+        - Improve MathML for \hphantom and \vphantom (#1883)
+        - Improve MathML for \coloneqq, \dblcolon, \eqcolon, and \eqqcolon (#1889)
+        - Improve MathML for \brace (#1884)
+        - Fix \middle spacing (#1906)
+        - Get a tall \middle\vert from MathML (#1911)
+        - Improve more coloneq (#1902)
+        - Make \smallint small in \displaystyle (#1907)
+        - Improve MathML for characters in Unicode private use area (#1908)
+        - Improve MathML for extensible arrows (#1901)
+        - Improve MathML for \rule (#1912)
+        - Improve MathML for fractions (#1882)
+        - Improve MathML for \tag (#1915)
+        - Improve MathML for \colorbox and \fcolorbox (#1914)
+        - Improve MathML for environments (#1910)
+        - Improve MathML for \genfrac barline (#1925)
+        - Support \textup and \textmd (#1921) 
+        - Improve MathML for \not (#1923)
+        - Improve MathML for \Bbbk (#1930)
+        - Prevent inadvertent tall delims (#1948)
+
+    - Removed
+        - Re-added code for \includegraphics but disabled the function until trust settings is merged (#1951) 
+
+
 = 1.10.1 =
 * Updated KaTeX library to 0.10.1
 	* Added
