@@ -44,7 +44,7 @@ function katex_rubber() {
 	global $katex_using;
 	if ( $katex_using ) {
 		// @formatter:off
-		?><script>!function(){"use strict";for(var e=document.querySelectorAll(".wp-katex-eq"),t=0;t<e.length;t++){var r=e[t],a=document.createElement("span");try{katex.render(r.textContent,a,{displayMode:"true"===r.getAttribute("data-display"),throwOnError:!1})}catch(n){a.style.color="red",a.textContent=n.message}r.parentNode.replaceChild(a,r)}}();</script><?php
+		?><script>!window.addEventListener('load', (event) => {for(var e=document.querySelectorAll(".wp-katex-eq"),t=0;t<e.length;t++){var r=e[t],a=document.createElement("span");try{katex.render(r.textContent,a,{displayMode:"true"===r.getAttribute("data-display"),throwOnError:!1})}catch(n){a.style.color="red",a.textContent=n.message}r.parentNode.replaceChild(a,r)}});</script><?php
 		// @formatter:on
 	}
 }
